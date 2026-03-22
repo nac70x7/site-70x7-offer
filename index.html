@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>70x7 | Premium Websites for Local Businesses — Delivered in Days</title>
+  <meta name="description" content="70x7 builds professional, conversion-focused websites for local businesses. Premium design, fast delivery, ongoing support. See what your new site could look like — free preview.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAFAF8;
+      --surface: #FFFFFF;
+      --ink: #1A1A1A;
+      --ink-muted: #6B6B6B;
+      --accent: #2D5016;
+      --accent-light: rgba(45,80,22,0.08);
+      --warm: #F5F0E8;
+      --radius: 10px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--ink); background: var(--bg); line-height: 1.65; overflow-x: hidden; font-size: 1rem; }
+    h1, h2, h3 { font-family: 'Fraunces', serif; text-wrap: balance; }
+    h1 { font-size: clamp(2.5rem, 5.5vw, 4.25rem); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); line-height: 1.15; font-weight: 600; }
+    h3 { font-size: 1.25rem; line-height: 1.3; font-weight: 600; }
+    p { max-width: 48ch; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+
+    /* Nav */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,248,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .nav__inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav__logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .nav__logo span { color: var(--accent); }
+    .nav__links { display: flex; gap: 28px; align-items: center; }
+    .nav__links a { color: var(--ink-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; }
+    .nav__links a:hover { color: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.875rem; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; }
+    .btn--primary { background: var(--accent); color: #fff; }
+    .btn--primary:hover { background: #234012; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(45,80,22,0.25); }
+    .btn--outline { background: transparent; color: var(--ink); border: 1.5px solid rgba(0,0,0,0.15); }
+    .btn--outline:hover { border-color: var(--ink); }
+    .btn--large { padding: 16px 32px; font-size: 1rem; }
+
+    /* Hero */
+    .hero { padding: 160px 0 100px; text-align: center; }
+    .hero__badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent-light); color: var(--accent); padding: 6px 16px; border-radius: 100px; font-size: 0.8125rem; font-weight: 600; margin-bottom: 24px; }
+    .hero h1 { margin: 0 auto 20px; max-width: 14ch; }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero__sub { color: var(--ink-muted); font-size: 1.125rem; line-height: 1.7; max-width: 52ch; margin: 0 auto 36px; }
+    .hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .hero__proof { margin-top: 48px; display: flex; justify-content: center; gap: 48px; }
+    .hero__proof-item { text-align: center; }
+    .hero__proof-num { font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 700; color: var(--accent); }
+    .hero__proof-label { font-size: 0.75rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+    /* Problem */
+    .problem { background: var(--warm); }
+    .problem__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .problem h2 { margin-bottom: 20px; }
+    .problem__sub { color: var(--ink-muted); margin-bottom: 28px; }
+    .problem__list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .problem__item { display: flex; gap: 12px; align-items: flex-start; }
+    .problem__x { width: 24px; height: 24px; border-radius: 50%; background: rgba(220,38,38,0.08); color: #DC2626; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+    .problem__item p { max-width: none; color: var(--ink-muted); font-size: 0.9375rem; }
+    .problem__visual { background: var(--surface); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); padding: 32px; }
+    .problem__stat { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .problem__stat:last-child { border-bottom: none; }
+    .problem__stat-label { font-size: 0.875rem; color: var(--ink-muted); }
+    .problem__stat-value { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; color: var(--accent); }
+
+    /* Solution */
+    .solution { background: var(--bg); text-align: center; }
+    .solution h2 { margin-bottom: 12px; }
+    .solution__sub { color: var(--ink-muted); margin: 0 auto 56px; }
+    .solution__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: left; }
+    .solution__card { background: var(--surface); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); padding: 28px; }
+    .solution__icon { width: 44px; height: 44px; border-radius: 10px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--accent); margin-bottom: 16px; }
+    .solution__card h3 { margin-bottom: 8px; }
+    .solution__card p { color: var(--ink-muted); font-size: 0.9375rem; max-width: none; }
+
+    /* Portfolio */
+    .portfolio { background: var(--surface); }
+    .portfolio__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+    .portfolio__header p { color: var(--ink-muted); margin-top: 8px; }
+    .portfolio__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .portfolio__item { border-radius: var(--radius); overflow: hidden; position: relative; aspect-ratio: 16/10; background: var(--warm); border: 1px solid rgba(0,0,0,0.06); }
+    .portfolio__item-img { width: 100%; height: 100%; object-fit: cover; }
+    .portfolio__item-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: #fff; }
+    .portfolio__item-name { font-family: 'Fraunces', serif; font-size: 1.125rem; font-weight: 600; }
+    .portfolio__item-niche { font-size: 0.8125rem; opacity: 0.8; }
+    .portfolio__placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: var(--ink-muted); font-size: 0.875rem; }
+    .portfolio__placeholder i { font-size: 32px; opacity: 0.3; }
+
+    /* Pricing */
+    .pricing { background: var(--bg); }
+    .pricing__header { text-align: center; margin-bottom: 56px; }
+    .pricing__header p { color: var(--ink-muted); margin: 12px auto 0; }
+    .pricing__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .price-card { background: var(--surface); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); padding: 32px; display: flex; flex-direction: column; }
+    .price-card--featured { border-color: var(--accent); position: relative; }
+    .price-card--featured::before { content: 'Most Popular'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; padding: 4px 16px; border-radius: 100px; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+    .price-card__name { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); font-weight: 600; }
+    .price-card__price { font-family: 'Fraunces', serif; font-size: 2.75rem; font-weight: 700; margin: 8px 0; }
+    .price-card__desc { font-size: 0.875rem; color: var(--ink-muted); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .price-card__features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
+    .price-card__features li { display: flex; gap: 8px; align-items: flex-start; font-size: 0.9375rem; color: var(--ink-muted); }
+    .price-card__features li i { color: var(--accent); margin-top: 3px; flex-shrink: 0; }
+    .price-card .btn { width: 100%; justify-content: center; }
+
+    /* Process */
+    .process { background: var(--warm); }
+    .process__header { text-align: center; margin-bottom: 56px; }
+    .process__header p { color: var(--ink-muted); margin: 12px auto 0; }
+    .process__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .pstep { text-align: center; }
+    .pstep__num { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--accent); font-weight: 700; margin-bottom: 12px; }
+    .pstep h3 { margin-bottom: 6px; }
+    .pstep p { color: var(--ink-muted); font-size: 0.875rem; max-width: none; }
+
+    /* FAQ */
+    .faq { background: var(--bg); }
+    .faq__header { text-align: center; margin-bottom: 48px; }
+    .faq__grid { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .faq__item { background: var(--surface); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); overflow: hidden; }
+    .faq__q { padding: 20px 24px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq__q:hover { color: var(--accent); }
+    .faq__a { padding: 0 24px 20px; color: var(--ink-muted); font-size: 0.9375rem; display: none; }
+    .faq__item.open .faq__a { display: block; }
+    .faq__item.open .faq__chevron { transform: rotate(180deg); }
+    .faq__chevron { transition: transform 0.2s; font-size: 18px; }
+
+    /* CTA */
+    .final-cta { background: var(--accent); color: #fff; text-align: center; }
+    .final-cta h2 { color: #fff; margin-bottom: 12px; }
+    .final-cta p { color: rgba(255,255,255,0.8); margin: 0 auto 32px; }
+    .final-cta .btn--primary { background: #fff; color: var(--accent); }
+    .final-cta .btn--primary:hover { background: #f0f0f0; }
+
+    /* Footer */
+    .footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
+    .footer__inner { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer__logo { font-family: 'Fraunces', serif; color: #fff; font-size: 1.25rem; font-weight: 700; }
+    .footer__logo span { color: var(--accent); }
+    .footer__links { display: flex; gap: 24px; }
+    .footer__links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem; }
+    .footer__links a:hover { color: #fff; }
+    .footer__copy { text-align: center; padding-top: 24px; font-size: 0.75rem; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .hero { padding: 120px 0 64px; }
+      .nav__links { display: none; }
+      .hero__proof { flex-direction: column; gap: 16px; }
+      .problem__grid, .portfolio__grid, .pricing__grid { grid-template-columns: 1fr; }
+      .solution__grid { grid-template-columns: 1fr; }
+      .process__steps { grid-template-columns: 1fr 1fr; }
+      .footer__inner { flex-direction: column; gap: 16px; text-align: center; }
+      .footer__links { flex-wrap: wrap; justify-content: center; }
+      .price-card--featured { margin-top: 16px; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">70<span>x</span>7</a>
+      <div class="nav__links">
+        <a href="#portfolio">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta" class="btn btn--primary">Free Site Preview</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero__badge"><i class="ph-bold ph-lightning"></i> Delivered in days, not months</div>
+      <h1>Your Business Deserves a Website That <em>Works</em></h1>
+      <p class="hero__sub">We build premium, conversion-focused websites for local businesses — designed to generate calls, bookings, and customers. Not just look pretty.</p>
+      <div class="hero__actions">
+        <a href="#cta" class="btn btn--primary btn--large"><i class="ph-bold ph-eye"></i> See Your Free Preview</a>
+        <a href="#pricing" class="btn btn--outline btn--large">View Pricing</a>
+      </div>
+      <div class="hero__proof">
+        <div class="hero__proof-item">
+          <div class="hero__proof-num">3–5</div>
+          <div class="hero__proof-label">Day Delivery</div>
+        </div>
+        <div class="hero__proof-item">
+          <div class="hero__proof-num">100%</div>
+          <div class="hero__proof-label">Custom Design</div>
+        </div>
+        <div class="hero__proof-item">
+          <div class="hero__proof-num">$0</div>
+          <div class="hero__proof-label">Preview Cost</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem section" id="problem">
+    <div class="container">
+      <div class="problem__grid">
+        <div class="reveal">
+          <h2>Your Current Website Is Costing You Customers</h2>
+          <p class="problem__sub">Every day your site looks outdated, loads slowly, or doesn't work on phones — you're losing real business to competitors who invested in theirs.</p>
+          <ul class="problem__list">
+            <li class="problem__item">
+              <div class="problem__x"><i class="ph-bold ph-x"></i></div>
+              <p><strong>Looks like 2015.</strong> Visitors decide in 50 milliseconds whether to stay or hit back. An outdated site says "we don't care about details."</p>
+            </li>
+            <li class="problem__item">
+              <div class="problem__x"><i class="ph-bold ph-x"></i></div>
+              <p><strong>Doesn't work on phones.</strong> 70% of local searches happen on mobile. If your site isn't mobile-perfect, you're invisible to most customers.</p>
+            </li>
+            <li class="problem__item">
+              <div class="problem__x"><i class="ph-bold ph-x"></i></div>
+              <p><strong>No clear call to action.</strong> Visitors don't know what to do next. No click-to-call, no booking form, no reason to choose you over the next result.</p>
+            </li>
+            <li class="problem__item">
+              <div class="problem__x"><i class="ph-bold ph-x"></i></div>
+              <p><strong>Agencies want $8K+ and 8 weeks.</strong> You know you need a better site but you can't justify $10,000 and two months of back-and-forth.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="problem__visual reveal">
+          <div style="font-family: 'Fraunces', serif; font-size: 1.125rem; font-weight: 600; margin-bottom: 20px;">What a bad website actually costs:</div>
+          <div class="problem__stat">
+            <span class="problem__stat-label">Lost leads per month</span>
+            <span class="problem__stat-value">30–50</span>
+          </div>
+          <div class="problem__stat">
+            <span class="problem__stat-label">Revenue left on the table</span>
+            <span class="problem__stat-value">$5K–$15K</span>
+          </div>
+          <div class="problem__stat">
+            <span class="problem__stat-label">Competitors with better sites</span>
+            <span class="problem__stat-value">8 of 10</span>
+          </div>
+          <div class="problem__stat">
+            <span class="problem__stat-label">Time to fix with a traditional agency</span>
+            <span class="problem__stat-value">6–8 weeks</span>
+          </div>
+          <div class="problem__stat">
+            <span class="problem__stat-label">Time to fix with 70x7</span>
+            <span class="problem__stat-value">3–5 days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution section" id="solution">
+    <div class="container">
+      <div class="reveal">
+        <h2>A Website That Generates Business</h2>
+        <p class="solution__sub">Every site we build is designed around one goal: turning visitors into customers.</p>
+      </div>
+      <div class="solution__grid">
+        <div class="solution__card reveal">
+          <div class="solution__icon"><i class="ph-bold ph-paint-brush"></i></div>
+          <h3>Custom Design, Not Templates</h3>
+          <p>Every site gets a unique design direction matched to your brand and niche. No cookie-cutter layouts. 60 named aesthetic styles to choose from.</p>
+        </div>
+        <div class="solution__card reveal">
+          <div class="solution__icon"><i class="ph-bold ph-target"></i></div>
+          <h3>Built to Convert</h3>
+          <p>Click-to-call buttons, booking forms, testimonials, and clear CTAs placed where they drive action. Your site works while you sleep.</p>
+        </div>
+        <div class="solution__card reveal">
+          <div class="solution__icon"><i class="ph-bold ph-device-mobile"></i></div>
+          <h3>Mobile-Perfect</h3>
+          <p>Built mobile-first. Every tap target sized right, every form easy to fill, every image optimized. Because that's where your customers are.</p>
+        </div>
+        <div class="solution__card reveal">
+          <div class="solution__icon"><i class="ph-bold ph-magnifying-glass"></i></div>
+          <h3>SEO-Ready</h3>
+          <p>Proper meta tags, schema markup, fast load times, and Google-friendly structure. Show up when people search for your services.</p>
+        </div>
+        <div class="solution__card reveal">
+          <div class="solution__icon"><i class="ph-bold ph-rocket-launch"></i></div>
+          <h3>Fast Delivery</h3>
+          <p>Most sites delivered in 3–5 business days. Not 6–8 weeks. Because your business can't wait for a redesign committee.</p>
+        </div>
+        <div class="solution__card reveal">
+          <div class="solution__icon"><i class="ph-bold ph-handshake"></i></div>
+          <h3>Ongoing Partnership</h3>
+          <p>We don't disappear after launch. Monthly maintenance, SEO, content updates, and a team that answers when you call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <div class="portfolio__header reveal">
+        <div>
+          <h2>Recent Work</h2>
+          <p>Sites we've built for businesses like yours.</p>
+        </div>
+      </div>
+      <div class="portfolio__grid">
+        <div class="portfolio__item reveal">
+          <div class="portfolio__placeholder"><i class="ph-thin ph-wrench"></i>Austin Plumbing · Plumbing</div>
+          <!-- Replace with screenshot: /sites/austin-plumbing/qa-screenshots/desktop.png -->
+        </div>
+        <div class="portfolio__item reveal">
+          <div class="portfolio__placeholder"><i class="ph-thin ph-tooth"></i>Smile Dental · Dental</div>
+        </div>
+        <div class="portfolio__item reveal">
+          <div class="portfolio__placeholder"><i class="ph-thin ph-thermometer-simple"></i>Summit HVAC · Phoenix AZ</div>
+        </div>
+        <div class="portfolio__item reveal">
+          <div class="portfolio__placeholder"><i class="ph-thin ph-buildings"></i>Noir Realty · Luxury Real Estate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <div class="pricing__header reveal">
+        <h2>Simple, Transparent Pricing</h2>
+        <p>No hourly rates. No scope creep. One price, everything included.</p>
+      </div>
+      <div class="pricing__grid">
+        <div class="price-card reveal">
+          <div class="price-card__name">Launch Page</div>
+          <div class="price-card__price">$2,500</div>
+          <div class="price-card__desc">Single-page site that gets you online fast with everything you need to start generating leads.</div>
+          <ul class="price-card__features">
+            <li><i class="ph-bold ph-check"></i> Custom design (not a template)</li>
+            <li><i class="ph-bold ph-check"></i> Up to 7 sections</li>
+            <li><i class="ph-bold ph-check"></i> Mobile responsive</li>
+            <li><i class="ph-bold ph-check"></i> Contact form + click-to-call</li>
+            <li><i class="ph-bold ph-check"></i> SEO basics + Google Analytics</li>
+            <li><i class="ph-bold ph-check"></i> 1 revision round</li>
+            <li><i class="ph-bold ph-check"></i> 3–5 day delivery</li>
+          </ul>
+          <a href="#cta" class="btn btn--outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--featured reveal">
+          <div class="price-card__name">Full Site</div>
+          <div class="price-card__price">$4,500</div>
+          <div class="price-card__desc">Complete web presence with multiple pages, conversion copy, and local SEO setup.</div>
+          <ul class="price-card__features">
+            <li><i class="ph-bold ph-check"></i> Everything in Launch Page</li>
+            <li><i class="ph-bold ph-check"></i> 3–5 pages</li>
+            <li><i class="ph-bold ph-check"></i> Conversion-optimized copy</li>
+            <li><i class="ph-bold ph-check"></i> Google Business Profile setup</li>
+            <li><i class="ph-bold ph-check"></i> Local SEO (citations + schema)</li>
+            <li><i class="ph-bold ph-check"></i> 2 revision rounds</li>
+            <li><i class="ph-bold ph-check"></i> 5–10 day delivery</li>
+          </ul>
+          <a href="#cta" class="btn btn--primary">Get Started</a>
+        </div>
+        <div class="price-card reveal">
+          <div class="price-card__name">Premium</div>
+          <div class="price-card__price">$7,500</div>
+          <div class="price-card__desc">Cinematic, animated site with creative direction — for businesses that want to stand out.</div>
+          <ul class="price-card__features">
+            <li><i class="ph-bold ph-check"></i> Everything in Full Site</li>
+            <li><i class="ph-bold ph-check"></i> Scroll-driven animations</li>
+            <li><i class="ph-bold ph-check"></i> Custom AI-generated visuals</li>
+            <li><i class="ph-bold ph-check"></i> Video backgrounds</li>
+            <li><i class="ph-bold ph-check"></i> Creative director involvement</li>
+            <li><i class="ph-bold ph-check"></i> 3 revision rounds</li>
+            <li><i class="ph-bold ph-check"></i> 7–14 day delivery</li>
+          </ul>
+          <a href="#cta" class="btn btn--outline">Get Started</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 32px; color: var(--ink-muted); font-size: 0.875rem;" class="reveal">
+        All plans: 50% upfront, 50% on delivery. Add monthly maintenance from $150/mo.
+      </div>
+    </div>
+  </section>
+
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="process__header reveal">
+        <h2>How It Works</h2>
+        <p>Four steps from "I need a site" to "it's live."</p>
+      </div>
+      <div class="process__steps">
+        <div class="pstep reveal">
+          <div class="pstep__num">01</div>
+          <h3>Discovery</h3>
+          <p>Quick call to understand your business, goals, and competitors. We handle the rest.</p>
+        </div>
+        <div class="pstep reveal">
+          <div class="pstep__num">02</div>
+          <h3>Build</h3>
+          <p>We design and build your site with a custom aesthetic matched to your brand.</p>
+        </div>
+        <div class="pstep reveal">
+          <div class="pstep__num">03</div>
+          <h3>Review</h3>
+          <p>You get a live preview link. Tell us what you love and what to change.</p>
+        </div>
+        <div class="pstep reveal">
+          <div class="pstep__num">04</div>
+          <h3>Launch</h3>
+          <p>We connect your domain, set up analytics, and go live. You start getting leads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="faq__header reveal">
+        <h2>Questions? Answers.</h2>
+      </div>
+      <div class="faq__grid">
+        <div class="faq__item open reveal">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            How is this so fast compared to agencies?
+            <i class="ph-bold ph-caret-down faq__chevron"></i>
+          </div>
+          <div class="faq__a">We use advanced design tools and a proven build process that eliminates the back-and-forth that makes agencies slow. No design committees, no endless revisions cycles. You get a dedicated creative director who understands local business and delivers in days.</div>
+        </div>
+        <div class="faq__item reveal">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            Will my site look like a template?
+            <i class="ph-bold ph-caret-down faq__chevron"></i>
+          </div>
+          <div class="faq__a">No. Every site gets a custom design direction chosen specifically for your niche and brand. We have 60 named aesthetic styles and 28 reference sites we draw from — your site will look like it was designed specifically for you, because it was.</div>
+        </div>
+        <div class="faq__item reveal">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            What's included in the monthly maintenance?
+            <i class="ph-bold ph-caret-down faq__chevron"></i>
+          </div>
+          <div class="faq__a">Starter ($150/mo): hosting, uptime monitoring, monthly backup, and 1 content update. Growth ($300/mo) adds local SEO, performance reports, and 3 updates. Premium ($500/mo) adds AI chatbot, Google Ads landing pages, and priority support.</div>
+        </div>
+        <div class="faq__item reveal">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            Do I own the website?
+            <i class="ph-bold ph-caret-down faq__chevron"></i>
+          </div>
+          <div class="faq__a">Yes. Upon full payment, you own all the code and content. If you ever want to move to a different host or stop maintenance, we hand over everything — no lock-in, no hostage holding.</div>
+        </div>
+        <div class="faq__item reveal">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            What if I don't like the design?
+            <i class="ph-bold ph-caret-down faq__chevron"></i>
+          </div>
+          <div class="faq__a">Every tier includes revision rounds (1–3 depending on plan). We show you a live preview before launch and iterate based on your feedback. Additional revisions beyond included rounds are $150/hour, quoted before starting.</div>
+        </div>
+        <div class="faq__item reveal">
+          <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
+            What about the free preview?
+            <i class="ph-bold ph-caret-down faq__chevron"></i>
+          </div>
+          <div class="faq__a">We'll build a preview of your new homepage — for free, no obligation. If you love it, we move forward. If not, no hard feelings. We do this because we're confident in the quality.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta section" id="cta">
+    <div class="container reveal">
+      <h2>See What Your New Site Could Look Like</h2>
+      <p>We'll build a free preview of your homepage. No commitment, no credit card, no catch. If you love it, we'll talk about next steps.</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:hello@70x7.dev?subject=Free%20Site%20Preview&body=Business%20name:%0AWebsite%20(if%20any):%0ACity:%0AWhat%20you%20do:" class="btn btn--primary btn--large"><i class="ph-bold ph-envelope"></i> Request Free Preview</a>
+        <a href="tel:5555550170" class="btn btn--outline btn--large" style="border-color: rgba(255,255,255,0.3); color: #fff;"><i class="ph-bold ph-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logo">70<span>x</span>7</div>
+        <div class="footer__links">
+          <a href="#portfolio">Work</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+          <a href="mailto:hello@70x7.dev">Contact</a>
+        </div>
+      </div>
+      <div class="footer__copy">&copy; 2026 70x7. Premium websites for local businesses.</div>
+    </div>
+  </footer>
+
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    }
+  </script>
+</body>
+</html>
