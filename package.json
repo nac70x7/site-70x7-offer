@@ -1,0 +1,7 @@
+{
+  "name": "70x7-offer",
+  "private": true,
+  "dependencies": {
+    "stripe": "^20.4.1"
+  }
+}

@@ -518,7 +518,7 @@
       if (!businessName) { if (btn) { btn.textContent = 'Buy Now \u2014 $997'; btn.disabled = false; } return; }
 
       try {
-        const res = await fetch('/api/checkout/create-session', {
+        const res = await fetch('/api/checkout', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, business_name: businessName }),
