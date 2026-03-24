@@ -41,9 +41,13 @@ export default async function handler(
       cancel_url: `${siteUrl}/#pricing`,
     };
 
-    // Keys need encoding but values with Stripe templates ({CHECKOUT_SESSION_ID}) must stay literal
+    const encode = (v: string) =>
+      encodeURIComponent(v).replace(
+        /%7BCHECKOUT_SESSION_ID%7D/gi,
+        "{CHECKOUT_SESSION_ID}",
+      );
     const body = Object.entries(fields)
-      .map(([k, v]) => `${k}=${v}`)
+      .map(([k, v]) => `${encodeURIComponent(k)}=${encode(v)}`)
       .join("&");
 
     const response = await fetch(
