@@ -26,29 +26,19 @@ export default async function handler(
       return;
     }
 
-    const fields: Record<string, string> = {
-      mode: "payment",
-      "payment_method_types[0]": "card",
-      customer_email: email,
-      "line_items[0][price]": priceId,
-      "line_items[0][quantity]": "1",
-      "metadata[business_name]": business_name,
-      "metadata[preview_url]": preview_url || "",
-      "metadata[niche]": niche || "",
-      "metadata[city]": city || "",
-      "metadata[prospect_email]": email,
-      success_url: `${siteUrl}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/#pricing`,
-    };
-
-    const encode = (v: string) =>
-      encodeURIComponent(v).replace(
-        /%7BCHECKOUT_SESSION_ID%7D/gi,
-        "{CHECKOUT_SESSION_ID}",
-      );
-    const body = Object.entries(fields)
-      .map(([k, v]) => `${encodeURIComponent(k)}=${encode(v)}`)
-      .join("&");
+    const params = new URLSearchParams();
+    params.set("mode", "payment");
+    params.set("payment_method_types[0]", "card");
+    params.set("customer_email", email);
+    params.set("line_items[0][price]", priceId);
+    params.set("line_items[0][quantity]", "1");
+    params.set("metadata[business_name]", business_name);
+    params.set("metadata[preview_url]", preview_url || "");
+    params.set("metadata[niche]", niche || "");
+    params.set("metadata[city]", city || "");
+    params.set("metadata[prospect_email]", email);
+    params.set("success_url", `${siteUrl}/success.html`);
+    params.set("cancel_url", `${siteUrl}/`);
 
     const response = await fetch(
       "https://api.stripe.com/v1/checkout/sessions",
@@ -58,7 +48,7 @@ export default async function handler(
           Authorization: `Bearer ${stripeKey}`,
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body,
+        body: params.toString(),
       },
     );
 
