@@ -1,22 +1,34 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Stripe from "stripe";
 
-export const config = { runtime: "edge" };
+export const config = {
+  api: { bodyParser: false },
+};
 
-export default async function handler(req: Request): Promise<Response> {
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse,
+): Promise<void> {
   if (req.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+    res.status(405).json({ error: "Method not allowed" });
+    return;
   }
 
   const stripeKey = process.env.STRIPE_SECRET_KEY;
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
   if (!stripeKey || !webhookSecret) {
-    return Response.json({ error: "Stripe not configured" }, { status: 500 });
+    res.status(500).json({ error: "Stripe not configured" });
+    return;
   }
 
   try {
-    const rawBody = await req.text();
-    const signature = req.headers.get("stripe-signature") ?? "";
+    const chunks: Buffer[] = [];
+    for await (const chunk of req) {
+      chunks.push(typeof chunk === "string" ? Buffer.from(chunk) : chunk);
+    }
+    const rawBody = Buffer.concat(chunks).toString("utf-8");
+    const signature = req.headers["stripe-signature"] as string;
 
     const stripe = new Stripe(stripeKey);
     const event = stripe.webhooks.constructEvent(
@@ -71,10 +83,10 @@ export default async function handler(req: Request): Promise<Response> {
       );
     }
 
-    return Response.json({ received: true });
+    res.status(200).json({ received: true });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
-    return Response.json({ error: msg }, { status: 400 });
+    res.status(400).json({ error: msg });
   }
 }
 
