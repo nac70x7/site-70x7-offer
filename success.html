@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Received | 70x7</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #FAFAF8;
+      --ink: #1A1A1A;
+      --ink-muted: #6B6B6B;
+      --accent: #2D5016;
+      --accent-light: rgba(45,80,22,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--ink); background: var(--bg); line-height: 1.65; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    h1, h2 { font-family: 'Fraunces', serif; }
+    .card { max-width: 560px; background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 48px 40px; text-align: center; }
+    .icon { width: 64px; height: 64px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 24px; }
+    h1 { font-size: 1.75rem; margin-bottom: 12px; }
+    .sub { color: var(--ink-muted); margin-bottom: 32px; }
+    .steps { text-align: left; list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+    .steps li { display: flex; gap: 12px; align-items: flex-start; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+    .steps li p { color: var(--ink-muted); font-size: 0.9375rem; }
+    .steps li strong { color: var(--ink); }
+    .contact { padding-top: 24px; border-top: 1px solid rgba(0,0,0,0.06); color: var(--ink-muted); font-size: 0.875rem; }
+    .contact a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">&#10003;</div>
+    <h1>Payment Received</h1>
+    <p class="sub">Thank you for choosing 70x7. You'll receive a confirmation email shortly with everything you need to know.</p>
+    <ul class="steps">
+      <li>
+        <div class="step-num">1</div>
+        <p><strong>Check your email.</strong> We've sent onboarding details and what to send us (logo, photos, domain info).</p>
+      </li>
+      <li>
+        <div class="step-num">2</div>
+        <p><strong>Reply with changes.</strong> Your preview site is the starting point. One round of revisions is included.</p>
+      </li>
+      <li>
+        <div class="step-num">3</div>
+        <p><strong>Go live.</strong> We connect your domain and launch. Most sites are live within 3-5 business days.</p>
+      </li>
+    </ul>
+    <div class="contact">
+      Questions? Email <a href="mailto:nicholas@nac70x7.com">nicholas@nac70x7.com</a>
+    </div>
+  </div>
+</body>
+</html>

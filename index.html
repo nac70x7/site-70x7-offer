@@ -338,54 +338,52 @@
         <p>No hourly rates. No scope creep. One price, everything included.</p>
       </div>
       <div class="pricing__grid">
-        <div class="price-card reveal">
-          <div class="price-card__name">Launch Page</div>
-          <div class="price-card__price">$2,500</div>
-          <div class="price-card__desc">Single-page site that gets you online fast with everything you need to start generating leads.</div>
+        <div class="price-card price-card--featured reveal">
+          <div class="price-card__name">Landing Page</div>
+          <div class="price-card__price">$997</div>
+          <div class="price-card__desc">Professional single-page site with conversion copy, responsive design, and SEO — deployed on your domain.</div>
           <ul class="price-card__features">
             <li><i class="ph-bold ph-check"></i> Custom design (not a template)</li>
             <li><i class="ph-bold ph-check"></i> Up to 7 sections</li>
             <li><i class="ph-bold ph-check"></i> Mobile responsive</li>
             <li><i class="ph-bold ph-check"></i> Contact form + click-to-call</li>
-            <li><i class="ph-bold ph-check"></i> SEO basics + Google Analytics</li>
+            <li><i class="ph-bold ph-check"></i> SEO basics baked in</li>
             <li><i class="ph-bold ph-check"></i> 1 revision round</li>
             <li><i class="ph-bold ph-check"></i> 3–5 day delivery</li>
           </ul>
-          <a href="#cta" class="btn btn--outline">Get Started</a>
+          <button onclick="startCheckout()" class="btn btn--primary">Buy Now — $997</button>
         </div>
-        <div class="price-card price-card--featured reveal">
-          <div class="price-card__name">Full Site</div>
-          <div class="price-card__price">$4,500</div>
-          <div class="price-card__desc">Complete web presence with multiple pages, conversion copy, and local SEO setup.</div>
+        <div class="price-card reveal">
+          <div class="price-card__name">Custom Site</div>
+          <div class="price-card__price">$2,500–$4,500</div>
+          <div class="price-card__desc">Multi-page site with discovery call, conversion copy, and local SEO setup.</div>
           <ul class="price-card__features">
-            <li><i class="ph-bold ph-check"></i> Everything in Launch Page</li>
+            <li><i class="ph-bold ph-check"></i> Everything in Landing Page</li>
             <li><i class="ph-bold ph-check"></i> 3–5 pages</li>
-            <li><i class="ph-bold ph-check"></i> Conversion-optimized copy</li>
+            <li><i class="ph-bold ph-check"></i> 15–30 min discovery call</li>
             <li><i class="ph-bold ph-check"></i> Google Business Profile setup</li>
             <li><i class="ph-bold ph-check"></i> Local SEO (citations + schema)</li>
             <li><i class="ph-bold ph-check"></i> 2 revision rounds</li>
-            <li><i class="ph-bold ph-check"></i> 5–10 day delivery</li>
           </ul>
-          <a href="#cta" class="btn btn--primary">Get Started</a>
+          <a href="#cta" class="btn btn--outline">Get Started</a>
         </div>
         <div class="price-card reveal">
-          <div class="price-card__name">Premium</div>
+          <div class="price-card__name">Creative Direction</div>
           <div class="price-card__price">$7,500</div>
-          <div class="price-card__desc">Cinematic, animated site with creative direction — for businesses that want to stand out.</div>
+          <div class="price-card__desc">Bespoke, art-directed site with scroll-driven storytelling, custom motion, and cinematic design.</div>
           <ul class="price-card__features">
-            <li><i class="ph-bold ph-check"></i> Everything in Full Site</li>
+            <li><i class="ph-bold ph-check"></i> Everything in Custom Site</li>
             <li><i class="ph-bold ph-check"></i> Scroll-driven animations</li>
-            <li><i class="ph-bold ph-check"></i> Custom AI-generated visuals</li>
-            <li><i class="ph-bold ph-check"></i> Video backgrounds</li>
+            <li><i class="ph-bold ph-check"></i> Custom visual narrative</li>
+            <li><i class="ph-bold ph-check"></i> Video backgrounds + 3D elements</li>
             <li><i class="ph-bold ph-check"></i> Creative director involvement</li>
             <li><i class="ph-bold ph-check"></i> 3 revision rounds</li>
-            <li><i class="ph-bold ph-check"></i> 7–14 day delivery</li>
           </ul>
           <a href="#cta" class="btn btn--outline">Get Started</a>
         </div>
       </div>
       <div style="text-align: center; margin-top: 32px; color: var(--ink-muted); font-size: 0.875rem;" class="reveal">
-        All plans: 50% upfront, 50% on delivery. Add monthly maintenance from $150/mo.
+        Landing Page: full payment upfront. Custom + Creative: 50% upfront, 50% on delivery. Add monthly maintenance from $99/mo.
       </div>
     </div>
   </section>
@@ -446,7 +444,7 @@
             What's included in the monthly maintenance?
             <i class="ph-bold ph-caret-down faq__chevron"></i>
           </div>
-          <div class="faq__a">Starter ($150/mo): hosting, uptime monitoring, monthly backup, and 1 content update. Growth ($300/mo) adds local SEO, performance reports, and 3 updates. Premium ($500/mo) adds AI chatbot, Google Ads landing pages, and priority support.</div>
+          <div class="faq__a">Starter ($99/mo): hosting, SSL, uptime monitoring, and 2 content updates. Growth ($199/mo) adds on-site SEO, quarterly Lighthouse audits, and 5 updates. Premium ($299/mo) adds AI FAQ chatbot, A/B landing page variants, and smart contact forms.</div>
         </div>
         <div class="faq__item reveal">
           <div class="faq__q" onclick="this.parentElement.classList.toggle('open')">
@@ -478,9 +476,9 @@
       <h2>See What Your New Site Could Look Like</h2>
       <p>We'll build a free preview of your homepage. No commitment, no credit card, no catch. If you love it, we'll talk about next steps.</p>
       <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <a href="mailto:hello@70x7.dev?subject=Free%20Site%20Preview&body=Business%20name:%0AWebsite%20(if%20any):%0ACity:%0AWhat%20you%20do:" class="btn btn--primary btn--large"><i class="ph-bold ph-envelope"></i> Request Free Preview</a>
-        <a href="tel:5555550170" class="btn btn--outline btn--large" style="border-color: rgba(255,255,255,0.3); color: #fff;"><i class="ph-bold ph-phone"></i> Call Us</a>
+        <a href="mailto:nicholas@nac70x7.com?subject=Free%20Site%20Preview&body=Business%20name:%0AWebsite%20(if%20any):%0ACity:%0AWhat%20you%20do:" class="btn btn--primary btn--large"><i class="ph-bold ph-envelope"></i> Request Free Preview</a>
       </div>
+      <p style="margin-top: 16px; font-size: 0.8125rem; opacity: 0.7;">Already seen your preview? <a href="#pricing" style="color: #fff; text-decoration: underline;">Buy now for $997</a></p>
     </div>
   </section>
 
@@ -493,7 +491,8 @@
           <a href="#pricing">Pricing</a>
           <a href="#process">Process</a>
           <a href="#faq">FAQ</a>
-          <a href="mailto:hello@70x7.dev">Contact</a>
+          <a href="mailto:nicholas@nac70x7.com">Contact</a>
+          <a href="/terms.html">Terms</a>
         </div>
       </div>
       <div class="footer__copy">&copy; 2026 70x7. Premium websites for local businesses.</div>
@@ -506,6 +505,35 @@
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
       }, { threshold: 0.1 });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    }
+
+    async function startCheckout() {
+      const btn = document.querySelector('[onclick="startCheckout()"]');
+      if (btn) { btn.textContent = 'Redirecting...'; btn.disabled = true; }
+
+      const email = prompt('Enter your email address:');
+      if (!email) { if (btn) { btn.textContent = 'Buy Now \u2014 $997'; btn.disabled = false; } return; }
+
+      const businessName = prompt('Business name:');
+      if (!businessName) { if (btn) { btn.textContent = 'Buy Now \u2014 $997'; btn.disabled = false; } return; }
+
+      try {
+        const res = await fetch('/api/checkout/create-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, business_name: businessName }),
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert('Something went wrong. Please email nicholas@nac70x7.com instead.');
+          if (btn) { btn.textContent = 'Buy Now \u2014 $997'; btn.disabled = false; }
+        }
+      } catch {
+        alert('Something went wrong. Please email nicholas@nac70x7.com instead.');
+        if (btn) { btn.textContent = 'Buy Now \u2014 $997'; btn.disabled = false; }
+      }
     }
   </script>
 </body>
