@@ -61,9 +61,12 @@ export default async function handler(
     const session = await response.json();
 
     if (!response.ok) {
-      res
-        .status(response.status)
-        .json({ error: session.error?.message || "Stripe error" });
+      res.status(response.status).json({
+        error: session.error?.message || "Stripe error",
+        type: session.error?.type,
+        param: session.error?.param,
+        code: session.error?.code,
+      });
       return;
     }
 
