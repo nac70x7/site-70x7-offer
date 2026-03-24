@@ -26,7 +26,7 @@ export default async function handler(
       return;
     }
 
-    const params = new URLSearchParams({
+    const fields: Record<string, string> = {
       mode: "payment",
       "payment_method_types[0]": "card",
       customer_email: email,
@@ -39,7 +39,12 @@ export default async function handler(
       "metadata[prospect_email]": email,
       success_url: `${siteUrl}/success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/#pricing`,
-    });
+    };
+
+    // Keys need encoding but values with Stripe templates ({CHECKOUT_SESSION_ID}) must stay literal
+    const body = Object.entries(fields)
+      .map(([k, v]) => `${k}=${v}`)
+      .join("&");
 
     const response = await fetch(
       "https://api.stripe.com/v1/checkout/sessions",
@@ -49,14 +54,16 @@ export default async function handler(
           Authorization: `Bearer ${stripeKey}`,
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: params.toString(),
+        body,
       },
     );
 
     const session = await response.json();
 
     if (!response.ok) {
-      res.status(response.status).json({ error: session.error?.message || "Stripe error" });
+      res
+        .status(response.status)
+        .json({ error: session.error?.message || "Stripe error" });
       return;
     }
 
