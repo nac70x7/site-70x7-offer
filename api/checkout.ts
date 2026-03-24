@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import Stripe from "stripe";
 
 export default async function handler(
   req: VercelRequest,
@@ -27,22 +26,39 @@ export default async function handler(
       return;
     }
 
-    const stripe = new Stripe(stripeKey);
-    const session = await stripe.checkout.sessions.create({
+    const params = new URLSearchParams({
       mode: "payment",
-      payment_method_types: ["card"],
+      "payment_method_types[0]": "card",
       customer_email: email,
-      line_items: [{ price: priceId, quantity: 1 }],
-      metadata: {
-        business_name,
-        preview_url: preview_url || "",
-        niche: niche || "",
-        city: city || "",
-        prospect_email: email,
-      },
+      "line_items[0][price]": priceId,
+      "line_items[0][quantity]": "1",
+      "metadata[business_name]": business_name,
+      "metadata[preview_url]": preview_url || "",
+      "metadata[niche]": niche || "",
+      "metadata[city]": city || "",
+      "metadata[prospect_email]": email,
       success_url: `${siteUrl}/success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/#pricing`,
     });
+
+    const response = await fetch(
+      "https://api.stripe.com/v1/checkout/sessions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${stripeKey}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: params.toString(),
+      },
+    );
+
+    const session = await response.json();
+
+    if (!response.ok) {
+      res.status(response.status).json({ error: session.error?.message || "Stripe error" });
+      return;
+    }
 
     res.status(200).json({ url: session.url, sessionId: session.id });
   } catch (err) {

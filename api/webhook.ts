@@ -40,7 +40,6 @@ export default async function handler(
     if (event.type === "checkout.session.completed") {
       const session = event.data.object as {
         id: string;
-        payment_intent: string | null;
         amount_total: number | null;
         customer_email: string | null;
         metadata: Record<string, string>;
