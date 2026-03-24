@@ -60,6 +60,8 @@ export default async function handler(
         type: session.error?.type,
         param: session.error?.param,
         code: session.error?.code,
+        debug_success_url: `${siteUrl}/success.html`,
+        debug_body_preview: params.toString().slice(0, 200),
       });
       return;
     }
